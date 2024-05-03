@@ -58,5 +58,47 @@ dt.Pclass.unique()
 dt.rename(columns = {"Sex":"Gender"},inplace = True)
 dt
 ```
+![Screenshot 2024-05-03 154343](https://github.com/Harsayazheni/Expt02-Introduction-to-Data-Science/assets/118708467/29cdec7c-9c4e-4a9c-866b-15d1d7817a0a)
+![Screenshot 2024-05-03 154352](https://github.com/Harsayazheni/Expt02-Introduction-to-Data-Science/assets/118708467/5223d5af-86bc-42b8-be53-4642074a4df2)
+![Screenshot 2024-05-03 154408](https://github.com/Harsayazheni/Expt02-Introduction-to-Data-Science/assets/118708467/dd16d9ed-cda3-45d7-a17c-438b5f703e04)
+
+```
+sns.catplot(x="Gender",col="Survived",kind="count",data=dt,height=5,aspect=.7)
+```
+![Screenshot 2024-05-03 154605](https://github.com/Harsayazheni/Expt02-Introduction-to-Data-Science/assets/118708467/e355a7e6-28db-4417-92c9-60ca3a868925)
+
+```
+sns.scatterplot(x=dt["Age"],y=dt["Fare"])
+```
+![Screenshot 2024-05-03 154613](https://github.com/Harsayazheni/Expt02-Introduction-to-Data-Science/assets/118708467/3c7ce365-3736-4066-9a72-4c6bb907dbeb)
+
+```
+sns.jointplot(x="Age",y="Fare",data=dt)
+```
+![Screenshot 2024-05-03 154624](https://github.com/Harsayazheni/Expt02-Introduction-to-Data-Science/assets/118708467/9e8f2261-8290-44be-9e6b-ec116561326b)
+
+```
+fig, ax1 = plt.subplots(figsize=(8,5))
+pt=sns.boxplot(ax=ax1,x="Pclass",y='Age',hue='Gender',data=dt)
+```
+![Screenshot 2024-05-03 154634](https://github.com/Harsayazheni/Expt02-Introduction-to-Data-Science/assets/118708467/c1fb126f-b73a-49d6-9e5f-8cc2ad6f3f5f)
+
+```
+sns.catplot(data=dt,col="Survived",x="Gender",hue="Pclass",kind="count")
+```
+![Screenshot 2024-05-03 154643](https://github.com/Harsayazheni/Expt02-Introduction-to-Data-Science/assets/118708467/eb6d5f15-c3b3-4c88-a4ef-abfe07b009e4)
+
+```
+corr=dt.corr()
+sns.heatmap(corr,annot=True)
+```
+![Screenshot 2024-05-03 154657](https://github.com/Harsayazheni/Expt02-Introduction-to-Data-Science/assets/118708467/2ebef9a2-7e58-4e77-81ac-2d65d3eb03af)
+
+```
+sns.pairplot(dt)
+```
+![Screenshot 2024-05-03 154723](https://github.com/Harsayazheni/Expt02-Introduction-to-Data-Science/assets/118708467/d9fefb7d-5730-4c12-8638-42441020f636)
+![Screenshot 2024-05-03 154739](https://github.com/Harsayazheni/Expt02-Introduction-to-Data-Science/assets/118708467/32cac6cc-7397-4215-8575-484e3643b9fb)
+
 # RESULT
       Thus, Exploratory Data Analysis for the given dataset is done successfully.
